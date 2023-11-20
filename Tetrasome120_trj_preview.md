@@ -1,5 +1,5 @@
-### TETR<sup><i>tt</i></sup><sub>120</sub> - tetrasome with 120 bp pseudosymmetric α-satellite DNA, truncated histone tails  (PDB ID 1KX5)
-[Back](https://intbio.github.io/Tetrasome_MD_2021)
+### TETR<sub>120</sub> - Траектория молекулярной динамики (2,3 мкс) тетрасомы с ДНК длиной 120 пар нуклеотидов (PDB ID 1KX5)
+[Назад](https://intbio.org/RNF_otchet/)
 
 <html lang="en">
   <head>
@@ -118,6 +118,9 @@
       });
       window.cy5_selection.setVisibility(false);
 
+      
+      //H3 39-49 - назвать H3 39-49 DNA latch
+
 
       nucl.addRepresentation('cartoon', {
         "sele": ":A :E",
@@ -164,19 +167,20 @@
         'useInteriorColor': false
       });
       nucl.addRepresentation('spacefill', {
-        "sele": ":I and -60 and .C1'",
+        "sele": ":I and -40 and .C1'",
         "color": "steelblue",
         "radius":5,
         'diffuseInterior': false,
         'useInteriorColor': false
       });
       nucl.addRepresentation('spacefill', {
-        "sele": ":J and -60 and .C1'",
+        "sele": ":J and -40 and .C1'",
         "color": "orange",
         "radius":5,
         'diffuseInterior': false,
         'useInteriorColor': false
       });
+
       window.nucl_cartoon = nucl.addRepresentation('cartoon', {
         "sele": "nucleic",
         "color": 'grey',
@@ -322,6 +326,7 @@
       window.cy3_selection.setVisibility(state);
       window.cy5_selection.setVisibility(state);
     }
+    
     function toggle_axes_visibility() {
       var state = $(this).is(":checked");
       window.axes.setVisibility(state);
@@ -455,7 +460,7 @@
           .attr("text-anchor", "end")
           .attr("x", width-width/2)
           .attr("y", height + 35)
-          .text("Time, μs");
+          .text("Время, мкс");
           
           svg.append("text")
           .attr("class", "y label")
@@ -463,7 +468,7 @@
           .attr("y", -45)
           .attr("dy", ".75em")
           .attr("transform", "rotate(-90)")
-          .text("Wrapped base pairs");
+          .text("Количество п.н. ДНК");
           
         tipBox = svg.append('rect')
           .attr('width', width)
@@ -508,43 +513,33 @@
     <p style="color:#009933;font-size:22px;font-family:verdana;font-weight: bold;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;display: inline">H4</p>
     <p style="color:#E0F705;font-size:22px;font-family:verdana;font-weight: bold;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;display: inline">H2A</p>
     <p style="color:#CE0000;font-size:22px;font-family:verdana;font-weight: bold;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;display: inline">H2B</p>
-    <p style="color:#808080;font-size:22px;font-family:verdana;font-weight: bold;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;display: inline">DNA</p>
+    <p style="color:#808080;font-size:22px;font-family:verdana;font-weight: bold;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;display: inline">ДНК</p>
     <br>
     <input class="form-check-input " type="checkbox" name="ref_str_check" value="" id="ref_str_check">
     <label class="form-check-label " for="ref_str_check">
-      Show starting state
+      Показать исходную структуру 
     </label>
     
     <input class="form-check-input " type="checkbox" name="ortho_check" value="" id="ortho_check" checked="true">
     <label class="form-check-label " for="ortho_check">
-      Orthographic
+      Ортографический вид  
     </label>
     
     <input class="form-check-input " type="checkbox" name="axes_check" value="" id="axes_check">
     <label class="form-check-label " for="ortho_check">
-      Show axes
+      Показать оси
     </label>
     
     <br>
     <input class="form-check-input " type="checkbox" name="arg_lys_check" value="" id="arg_lys_check">
     <label class="form-check-label " for="arg_lys_check">
-      Show ARG LYS
+      Показать ARG LYS
     </label>
     
-    <input class="form-check-input " type="checkbox" name="latch_check" value="" id="latch_check">
-    <label class="form-check-label " for="latch_check">
-      Show H3 39-49 DNA latch
-    </label>
-        
-
-    <input class="form-check-input " type="checkbox" name="highlight_DA_check" value="" id="highlight_DA_check">
-    <label class="form-check-label " for="highlight_DA_check">
-      Highlight ADE
-    </label>
-	  
+   <br>	  
     <input class="form-check-input " type="checkbox" name="cy3_selection_check" value="" id="cy3_selection_check">
     <label class="form-check-label " for="cy3_selection_check">
-      Show Cy3/Cy5 attachment sites
+      Показать положения меток Cy3/Cy5 
     </label>
 
 
@@ -553,10 +548,10 @@
       <button type="submit" class="btn" name="play_button" data-toggle="button" id='play' onclick='window.traj.player.play();'>Play</button>
       <button type="submit" class="btn" name="play_button" data-toggle="button" id='pause' onclick='window.traj.player.pause();'>Pause</button>
       <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
-      <p>Time: <span id="frame_counter"></span> μs</p>
+      <p>Время: <span id="frame_counter"></span> мкс</p>
 
     </div>
-    <h4>Number of wrapped DNA base pairs from each nucleosome end</h4>
+    <h4>Число пар нуклеотидов ДНК, взаимодействующих с тетрамером гистонов, с каждого конца</h4>
     <div id='tooltip' style='position:absolute;background-color:lightgray;padding:5px'></div>
     <div id="my_dataviz"></div>
 
