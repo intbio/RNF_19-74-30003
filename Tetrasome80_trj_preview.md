@@ -468,7 +468,7 @@
           .attr("y", -45)
           .attr("dy", ".75em")
           .attr("transform", "rotate(-90)")
-          .text("Взаимодействующие пары оснований ДНК");
+          .text("Количество п.н. ДНК");
           
         tipBox = svg.append('rect')
           .attr('width', width)
@@ -548,10 +548,10 @@
       <button type="submit" class="btn" name="play_button" data-toggle="button" id='play' onclick='window.traj.player.play();'>Play</button>
       <button type="submit" class="btn" name="play_button" data-toggle="button" id='pause' onclick='window.traj.player.pause();'>Pause</button>
       <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
-      <p>Время: <span id="frame_counter"></span> μs</p>
+      <p>Время: <span id="frame_counter"></span> мкс</p>
 
     </div>
-    <h4>Число пар оснований ДНК, взаимодействующих с тетрамером гистонов, с каждого конца</h4>
+    <h4>Число пар нуклеотидов ДНК, взаимодействующих с тетрамером гистонов, с каждого конца</h4>
     <div id='tooltip' style='position:absolute;background-color:lightgray;padding:5px'></div>
     <div id="my_dataviz"></div>
 
