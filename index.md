@@ -10,5 +10,5 @@
 ### Файлы траекторий 
 - TETR<sub>78</sub> - Траектория молекулярной динамики (1 мкс) тетрасомы с ДНК длиной 78 пар нуклеотидов (PDB ID 1KX5): [pdb](trj/h3-h4_2_tm_80DNA_for_web.pdb), [xtc](trj/h3-h4_2_tm_80DNA_for_web.xtc)
 - TETR<sub>98</sub> - Траектория молекулярной динамики (1 мкс) тетрасомы с ДНК длиной 98 пар нуклеотидов (PDB ID 1KX5): [pdb](trj/h3-h4_2_tm_100DNA_for_web.pdb), [xtc](trj/h3-h4_2_tm_100DNA_for_web.xtc)
-- TETR<sub>120</sub> - Траектория молекулярной динамики (2,3 мкс) тетрасомы с ДНК длиной 120 пар нуклеотидов (PDB ID 1KX5): [pdb](trj/h3-h4_2_tm_120DNA_for_web.pdb), [xtc](trj/h3-h4_2_tm_120DNA_for_web.xtc)some_124_tails_for_web.xtc)
+- TETR<sub>120</sub> - Траектория молекулярной динамики (2,3 мкс) тетрасомы с ДНК длиной 120 пар нуклеотидов (PDB ID 1KX5): [pdb](trj/h3-h4_2_tm_120DNA_for_web.pdb), [xtc](trj/h3-h4_2_tm_120DNA_for_web.xtc)
 
